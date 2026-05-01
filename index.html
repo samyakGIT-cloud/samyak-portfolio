@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samyak Kamble – Data Engineer | Azure Data Engineer</title>
+  <meta name="description" content="Samyak Kamble – Data Engineer, Azure Data Engineer, Data Analytics and Engineering Enthusiast. Building scalable data pipelines and AI-powered analytics systems." />
+
+  <!-- ============================================================
+       FONTS – Change these Google Font imports to swap typography
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       ICONS – Using Remix Icons CDN (no broken image risk)
+  ============================================================ -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ====================== CANVAS PARTICLES ====================== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ====================== LOADER ====================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Initialising<span class="loader-dots"></span></div>
+    </div>
+  </div>
+
+  <!-- ====================== CUSTOM CURSOR ====================== -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ====================== NAVBAR ====================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- ✏️ Change initials/logo text below -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>SK<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <span class="open-to-work-badge">
+          <span class="badge-dot"></span> Open to Work
+        </span>
+        <!-- ✏️ Replace resume.pdf with your actual resume filename -->
+        <a href="resume.pdf" class="btn-nav-resume" download>Resume</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====================== HERO SECTION ====================== -->
+  <section id="home" class="hero">
+    <div class="hero-bg-grid"></div>
+
+    <div class="hero-container">
+      <!-- Left: Text Content -->
+      <div class="hero-content" data-reveal>
+        <div class="hero-badge">
+          <i class="ri-database-2-line"></i>
+          Data Engineering &amp; AI Analytics
+        </div>
+
+        <!-- ✏️ Change name here -->
+        <h1 class="hero-title">
+          Hi, I'm<br />
+          <span class="hero-name gradient-text">Samyak Kamble</span>
+        </h1>
+
+        <div class="hero-typing-wrapper">
+          <span id="typingText" class="typing-text"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+
+        <!-- ✏️ Update tagline if needed -->
+        <p class="hero-subtitle">
+          Building <strong>scalable data pipelines</strong>, cloud-native ETL workflows,
+          and AI-powered analytics systems that convert raw data into
+          <strong>decision-ready business insights</strong>.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">
+            <i class="ri-folder-chart-line"></i> View Projects
+          </a>
+          <!-- ✏️ Replace resume.pdf with your actual resume file -->
+          <a href="resume.pdf" class="btn-secondary" download>
+            <i class="ri-download-line"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn-ghost">
+            <i class="ri-mail-line"></i> Contact Me
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0</span><span>+</span>
+            <span class="stat-label">Major Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="15">0</span><span>+</span>
+            <span class="stat-label">Tools &amp; Technologies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="2">0</span><span>+</span>
+            <span class="stat-label">Industry Simulations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Pipeline Visual -->
+      <div class="hero-visual" data-reveal-right>
+        <div class="pipeline-visual">
+          <div class="pipeline-node node-1">
+            <i class="ri-database-2-fill"></i>
+            <span>Raw Data</span>
+          </div>
+          <div class="pipeline-arrow">
+            <div class="arrow-line"><div class="arrow-flow"></div></div>
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+          <div class="pipeline-node node-2">
+            <i class="ri-settings-3-fill"></i>
+            <span>ETL Pipeline</span>
+          </div>
+          <div class="pipeline-arrow">
+            <div class="arrow-line"><div class="arrow-flow"></div></div>
+            <i class="ri-arrow-right-s-line"></i>
+          </div>
+          <div class="pipeline-node node-3">
+            <i class="ri-cloud-fill"></i>
+            <span>Azure / Spark</span>
+          </div>
+          <div class="pipeline-arrow vertical-arrow">
+            <div class="arrow-line-v"><div class="arrow-flow-v"></div></div>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+          <div class="pipeline-bottom-row">
+            <div class="pipeline-node node-4">
+              <i class="ri-bar-chart-box-fill"></i>
+              <span>Dashboard</span>
+            </div>
+            <div class="pipeline-arrow">
+              <div class="arrow-line"><div class="arrow-flow"></div></div>
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+            <div class="pipeline-node node-5">
+              <i class="ri-lightbulb-flash-fill"></i>
+              <span>Insights</span>
+            </div>
+          </div>
+
+          <!-- Floating tech badges -->
+          <div class="float-badge fb-1"><i class="ri-python-line"></i> Python</div>
+          <div class="float-badge fb-2"><i class="ri-table-line"></i> SQL</div>
+          <div class="float-badge fb-3"><i class="ri-cloud-line"></i> Azure</div>
+          <div class="float-badge fb-4"><i class="ri-fire-line"></i> Spark</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ====================== ABOUT SECTION ====================== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-user-line"></i> About Me</div>
+      <h2 class="section-title" data-reveal>Turning Data Chaos into<br /><span class="gradient-text">Structured Intelligence</span></h2>
+
+      <div class="about-grid">
+        <div class="about-card glass-card" data-reveal>
+          <!-- ✏️ Update about text here -->
+          <p class="about-text">
+            I am a <strong>BSc Data Science student</strong> from Mumbai University and a Data Engineer
+            focused on SQL, Python, Azure, Apache Spark, ETL workflows, and production-style analytics systems.
+          </p>
+          <p class="about-text">
+            I have hands-on experience in data analysis, visualization, dashboarding, and data cleaning
+            through projects and job simulations. Currently, I am working on <strong>NeuralRetail</strong>,
+            an industry-level AI-powered retail analytics platform where I explore data ingestion,
+            feature engineering, dashboards, APIs, and MLOps concepts.
+          </p>
+          <p class="about-text">
+            My goal is to build reliable data solutions that convert raw data into
+            <strong>decision-ready insights</strong> that businesses can act on.
+          </p>
+
+          <div class="about-info-row">
+            <div class="info-chip"><i class="ri-map-pin-line"></i> Mumbai, Maharashtra</div>
+            <div class="info-chip"><i class="ri-graduation-cap-line"></i> BSc Data Science, MU</div>
+            <div class="info-chip"><i class="ri-briefcase-line"></i> Intern @ Amdox Technologies</div>
+          </div>
+        </div>
+
+        <div class="about-highlights" data-reveal-right>
+          <div class="highlight-card glass-card">
+            <div class="highlight-icon"><i class="ri-database-2-line"></i></div>
+            <h4>Data Engineering</h4>
+            <p>Building ETL pipelines, data models, and warehouse solutions that scale.</p>
+          </div>
+          <div class="highlight-card glass-card">
+            <div class="highlight-icon"><i class="ri-cloud-line"></i></div>
+            <h4>Cloud & Azure</h4>
+            <p>Learning Azure Data Factory, Databricks, and cloud-native data workflows.</p>
+          </div>
+          <div class="highlight-card glass-card">
+            <div class="highlight-icon"><i class="ri-bar-chart-box-line"></i></div>
+            <h4>Analytics & BI</h4>
+            <p>Crafting Power BI dashboards and visual stories from complex datasets.</p>
+          </div>
+          <div class="highlight-card glass-card">
+            <div class="highlight-icon"><i class="ri-robot-2-line"></i></div>
+            <h4>AI & MLOps</h4>
+            <p>Integrating ML models into data pipelines with MLflow and FastAPI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SKILLS SECTION ====================== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-tools-line"></i> Skills & Technologies</div>
+      <h2 class="section-title" data-reveal>My <span class="gradient-text">Technical Arsenal</span></h2>
+      <p class="section-subtitle" data-reveal>A curated set of tools and technologies I work with across the data engineering stack.</p>
+
+      <div class="skills-grid">
+
+        <!-- Category 1 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-code-s-slash-line"></i></div>
+            <h3>Programming & Scripting</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="ri-python-line"></i> Python</span>
+            <span class="skill-tag"><i class="ri-database-line"></i> SQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-bar-chart-line"></i></div>
+            <h3>Data Analysis & Visualization</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="ri-microsoft-line"></i> Excel</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Plotly</span>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-git-branch-line"></i></div>
+            <h3>Data Engineering</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">ETL Pipelines</span>
+            <span class="skill-tag">Data Warehousing</span>
+            <span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Hadoop</span>
+            <span class="skill-tag">Airflow</span>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-cloud-line"></i></div>
+            <h3>Cloud & Azure</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="ri-cloud-fill"></i> Microsoft Azure</span>
+            <span class="skill-tag">Azure Data Factory</span>
+            <span class="skill-tag">Azure SQL</span>
+            <span class="skill-tag">Databricks</span>
+          </div>
+        </div>
+
+        <!-- Category 5 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-server-line"></i></div>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Statistical Analysis</span>
+            <span class="skill-tag">Hypothesis Testing</span>
+          </div>
+        </div>
+
+        <!-- Category 6 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-rocket-line"></i></div>
+            <h3>Backend & MLOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">MLflow</span>
+            <span class="skill-tag">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- Category 7 -->
+        <div class="skill-category glass-card" data-reveal>
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="ri-tools-line"></i></div>
+            <h3>Tools & Workflow</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="ri-github-line"></i> GitHub</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Jupyter Notebook</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FEATURED PROJECT – NEURALRETAIL ====================== -->
+  <section id="neuralretail" class="section featured-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-star-line"></i> Featured Project</div>
+      <h2 class="section-title" data-reveal><span class="gradient-text">NeuralRetail</span> – AI-Powered<br />Sales Intelligence Platform</h2>
+
+      <div class="featured-card glass-card" data-reveal>
+        <!-- Top Banner -->
+        <div class="featured-banner">
+          <div class="featured-banner-left">
+            <div class="featured-type-badge">Production-Level Project</div>
+            <h3 class="featured-title">NeuralRetail</h3>
+            <p class="featured-tagline">AI-Powered Sales Intelligence &amp; Predictive Analytics Platform</p>
+            <div class="featured-tags">
+              <span class="tag">Data Engineering</span>
+              <span class="tag">AI Analytics</span>
+              <span class="tag">MLOps</span>
+              <span class="tag">Retail Analytics</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Streamlit</span>
+            </div>
+          </div>
+          <div class="featured-banner-right">
+            <div class="nr-visual">
+              <div class="nr-circle-outer">
+                <div class="nr-circle-inner">
+                  <i class="ri-brain-line"></i>
+                </div>
+                <div class="nr-orbit nr-orbit-1"><div class="nr-planet"><i class="ri-database-line"></i></div></div>
+                <div class="nr-orbit nr-orbit-2"><div class="nr-planet"><i class="ri-bar-chart-line"></i></div></div>
+                <div class="nr-orbit nr-orbit-3"><div class="nr-planet"><i class="ri-cloud-line"></i></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture Flow -->
+        <div class="arch-section">
+          <h4 class="subsection-title"><i class="ri-flow-chart"></i> Data Architecture</h4>
+          <div class="arch-flow">
+            <div class="arch-node">
+              <i class="ri-database-2-line"></i>
+              <span>Raw Data</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-brush-line"></i>
+              <span>Data Cleaning</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-loop-right-line"></i>
+              <span>ETL Pipeline</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-server-line"></i>
+              <span>PostgreSQL / Data Lake</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-function-line"></i>
+              <span>Feature Engineering</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-robot-line"></i>
+              <span>ML Models</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node">
+              <i class="ri-code-s-slash-line"></i>
+              <span>FastAPI</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node accent-node">
+              <i class="ri-dashboard-3-line"></i>
+              <span>Streamlit Dashboard</span>
+            </div>
+            <div class="arch-arrow"><div class="arch-flow-line"></div><i class="ri-arrow-right-s-line"></i></div>
+            <div class="arch-node final-node">
+              <i class="ri-lightbulb-flash-line"></i>
+              <span>Business Insights</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detail Grid -->
+        <div class="featured-detail-grid">
+          <div class="detail-block">
+            <h4><i class="ri-question-line"></i> Problem</h4>
+            <p>Retailers struggle to convert massive volumes of transactional and behavioral data into actionable intelligence. They lack unified platforms for sales trend analysis, churn prediction, demand forecasting, and real-time dashboarding.</p>
+          </div>
+          <div class="detail-block">
+            <h4><i class="ri-lightbulb-line"></i> Solution</h4>
+            <p>NeuralRetail provides an end-to-end pipeline — from raw data ingestion to ML-driven insights — served through a Streamlit dashboard and a FastAPI prediction layer, making retail analytics production-ready.</p>
+          </div>
+          <div class="detail-block">
+            <h4><i class="ri-user-settings-line"></i> My Role</h4>
+            <p>Worked on data cleaning, EDA, feature engineering, dashboard planning, API layer understanding, and production-style project structuring. Explored how data engineering, analytics, and MLOps components connect in an end-to-end retail intelligence platform.</p>
+          </div>
+          <div class="detail-block">
+            <h4><i class="ri-trophy-line"></i> Business Impact</h4>
+            <ul class="impact-list">
+              <li><i class="ri-check-line"></i> Converts raw retail data into decision-ready business insights</li>
+              <li><i class="ri-check-line"></i> Supports forecasting, segmentation, and revenue analysis</li>
+              <li><i class="ri-check-line"></i> RFM analysis for customer behaviour intelligence</li>
+              <li><i class="ri-check-line"></i> Dashboard-based decision support for retail teams</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack-section">
+          <h4 class="subsection-title"><i class="ri-stack-line"></i> Tech Stack</h4>
+          <div class="tech-stack-pills">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Pandas</span>
+            <span class="tech-pill">NumPy</span>
+            <span class="tech-pill">Matplotlib</span>
+            <span class="tech-pill">Plotly</span>
+            <span class="tech-pill">Streamlit</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">MLflow</span>
+            <span class="tech-pill">Airflow</span>
+            <span class="tech-pill">Apache Spark</span>
+            <span class="tech-pill">GitHub</span>
+            <span class="tech-pill">Azure (Learning)</span>
+          </div>
+        </div>
+
+        <!-- Future Scope -->
+        <div class="future-scope">
+          <h4 class="subsection-title"><i class="ri-rocket-2-line"></i> Future Scope</h4>
+          <div class="scope-items">
+            <div class="scope-item"><i class="ri-cloud-upload-line"></i> Azure Cloud Deployment</div>
+            <div class="scope-item"><i class="ri-exchange-line"></i> Real-time Streaming with Kafka</div>
+            <div class="scope-item"><i class="ri-loop-right-line"></i> Automated Retraining Pipeline</div>
+            <div class="scope-item"><i class="ri-shield-check-line"></i> Model Monitoring &amp; Drift Detection</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="featured-cta">
+          <!-- ✏️ Replace # with your actual GitHub link -->
+          <a href="https://github.com/samyakGIT-cloud" class="btn-primary" target="_blank" rel="noopener">
+            <i class="ri-github-line"></i> View on GitHub
+          </a>
+          <!-- ✏️ Replace # with your live demo link when ready -->
+          <a href="#" class="btn-secondary">
+            <i class="ri-external-link-line"></i> Live Demo (Coming Soon)
+          </a>
+          <!-- ✏️ Replace # with case study link when ready -->
+          <a href="#" class="btn-ghost">
+            <i class="ri-article-line"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== ALL PROJECTS SECTION ====================== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-folder-chart-line"></i> Projects</div>
+      <h2 class="section-title" data-reveal>What I've <span class="gradient-text">Built</span></h2>
+      <p class="section-subtitle" data-reveal>End-to-end data engineering and analytics projects — from concept to production-style delivery.</p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: NeuralRetail -->
+        <div class="project-card glass-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-icon"><i class="ri-brain-line"></i></div>
+            <div class="project-badges">
+              <span class="badge-featured">⭐ Featured</span>
+              <span class="badge-status status-active">Active</span>
+            </div>
+          </div>
+          <h3 class="project-title">NeuralRetail</h3>
+          <p class="project-subtitle">AI-Powered Sales Intelligence &amp; Predictive Analytics Platform</p>
+          <p class="project-desc">
+            End-to-end retail analytics platform with ETL pipelines, demand forecasting, churn prediction,
+            customer segmentation, and a Streamlit dashboard served via FastAPI.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>SQL</span><span>FastAPI</span><span>Streamlit</span>
+            <span>MLflow</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <!-- ✏️ Replace # with your GitHub link -->
+            <a href="https://github.com/samyakGIT-cloud" class="proj-link" target="_blank" rel="noopener">
+              <i class="ri-github-line"></i> GitHub
+            </a>
+            <a href="#neuralretail" class="proj-link">
+              <i class="ri-article-line"></i> Details
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Customer Shopping -->
+        <div class="project-card glass-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-icon"><i class="ri-shopping-cart-2-line"></i></div>
+            <div class="project-badges">
+              <span class="badge-status status-done">Completed</span>
+            </div>
+          </div>
+          <h3 class="project-title">Customer Shopping Behaviour Analysis</h3>
+          <p class="project-subtitle">Sep 2025 – Dec 2025</p>
+          <p class="project-desc">
+            Analyzed customer purchase data using SQL &amp; Python Pandas to identify spending patterns,
+            seasonal trends, and discount impact. Built interactive Power BI dashboards for business insights.
+          </p>
+          <div class="project-tags">
+            <span>SQL</span><span>Python</span><span>Power BI</span>
+            <span>Pandas</span><span>EDA</span>
+          </div>
+          <div class="project-links">
+            <!-- ✏️ Replace with actual GitHub repo link -->
+            <a href="https://github.com/samyakGIT-cloud/customer_behaviour_analysis" class="proj-link" target="_blank" rel="noopener">
+              <i class="ri-github-line"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Azure Pipeline (Coming Soon) -->
+        <div class="project-card glass-card coming-soon-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-icon"><i class="ri-cloud-line"></i></div>
+            <div class="project-badges">
+              <span class="badge-status status-soon">Coming Soon</span>
+            </div>
+          </div>
+          <h3 class="project-title">Azure Data Pipeline Project</h3>
+          <p class="project-subtitle">Cloud-Native ETL &amp; Reporting</p>
+          <p class="project-desc">
+            Building a cloud-based ETL pipeline using Azure Data Factory, Azure SQL, Databricks, and Power BI
+            for automated data movement, transformation, and reporting. Work in progress.
+          </p>
+          <div class="project-tags">
+            <span>Azure</span><span>ADF</span><span>Databricks</span>
+            <span>SQL</span><span>ETL</span><span>Power BI</span>
+          </div>
+          <div class="coming-soon-overlay">
+            <i class="ri-time-line"></i>
+            <span>In Progress</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== EXPERIENCE SECTION ====================== -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-briefcase-line"></i> Experience</div>
+      <h2 class="section-title" data-reveal>Professional <span class="gradient-text">Journey</span></h2>
+
+      <div class="timeline">
+        <!-- Internship -->
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Data Science &amp; Analytics Intern</h3>
+                <!-- ✏️ Update company name -->
+                <p class="exp-company"><i class="ri-building-line"></i> Amdox Technologies</p>
+              </div>
+              <div class="exp-duration">
+                <span class="duration-badge active-badge">
+                  <span class="active-dot"></span> April 2026 – Present
+                </span>
+              </div>
+            </div>
+            <div class="exp-desc">
+              <ul class="exp-bullets">
+                <li><i class="ri-arrow-right-circle-fill"></i> Working on NeuralRetail, an AI-powered retail analytics and predictive intelligence platform.</li>
+                <li><i class="ri-arrow-right-circle-fill"></i> Implementing data cleaning, exploratory analysis, feature engineering, business KPIs, dashboarding, and API concepts.</li>
+                <li><i class="ri-arrow-right-circle-fill"></i> Learning production-level workflows including Docker, FastAPI, MLflow, Airflow, PostgreSQL, and scalable data pipeline design.</li>
+                <li><i class="ri-arrow-right-circle-fill"></i> Exploring how Data Engineering and AI can support real-world retail decision-making.</li>
+              </ul>
+            </div>
+            <div class="exp-skills">
+              <span>Python</span><span>SQL</span><span>FastAPI</span><span>Docker</span>
+              <span>MLflow</span><span>Streamlit</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section-tag edu-tag" data-reveal><i class="ri-graduation-cap-line"></i> Education</div>
+      <div class="timeline">
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">BSc Data Science</h3>
+                <!-- ✏️ Update university -->
+                <p class="exp-company"><i class="ri-building-line"></i> Mumbai University, Maharashtra</p>
+              </div>
+              <div class="exp-duration">
+                <span class="duration-badge">June 2024 – May 2027</span>
+              </div>
+            </div>
+            <p class="edu-note">Core: Statistics, Machine Learning, Data Engineering, Databases, Python, Big Data, and Cloud Computing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== CERTIFICATIONS SECTION ====================== -->
+  <section id="certifications" class="section cert-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-award-line"></i> Certifications</div>
+      <h2 class="section-title" data-reveal>Credentials &amp; <span class="gradient-text">Achievements</span></h2>
+
+      <div class="cert-grid">
+
+        <!-- Cert 1: Tata -->
+        <div class="cert-card glass-card" data-reveal>
+          <div class="cert-icon-wrap">
+            <div class="cert-icon"><i class="ri-pie-chart-2-line"></i></div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-name">Tata Data Visualisation</h3>
+            <!-- ✏️ Update provider name -->
+            <p class="cert-provider"><i class="ri-building-2-line"></i> Tata Group</p>
+            <p class="cert-duration"><i class="ri-calendar-line"></i> Jun 2025 – Jul 2025</p>
+            <p class="cert-skills">Data Visualization · Business Dashboards · Storytelling with Data · Insight Communication</p>
+          </div>
+          <div class="cert-footer">
+            <!-- ✏️ Replace # with your certificate link -->
+            <a href="Certificates/TATA Intern.pdf" class="btn-cert" target="_blank" rel="noopener">
+              <i class="ri-external-link-line"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Deloitte -->
+        <div class="cert-card glass-card" data-reveal>
+          <div class="cert-icon-wrap">
+            <div class="cert-icon"><i class="ri-line-chart-line"></i></div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-name">Data Analytics Job Simulation</h3>
+            <!-- ✏️ Update provider name -->
+            <p class="cert-provider"><i class="ri-building-2-line"></i> Deloitte</p>
+            <p class="cert-duration"><i class="ri-calendar-line"></i> Jul 2025</p>
+            <p class="cert-skills">Data Analysis · Dashboarding · Business Problem Solving · Analytical Reporting</p>
+          </div>
+          <div class="cert-footer">
+            <!-- ✏️ Replace # with your certificate link -->
+            <a href="Certificates/Deloitte Intern.pdf" class="btn-cert" target="_blank" rel="noopener">
+              <i class="ri-external-link-line"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3: SQL (Editable) -->
+        <div class="cert-card glass-card" data-reveal>
+          <div class="cert-icon-wrap">
+            <div class="cert-icon"><i class="ri-database-2-line"></i></div>
+          </div>
+          <div class="cert-body">
+            <!-- ✏️ Update certificate name and provider -->
+            <h3 class="cert-name">Advanced SQL Professional Certificate</h3>
+            <p class="cert-provider"><i class="ri-building-2-line"></i> Add Provider Here</p>
+            <p class="cert-duration"><i class="ri-calendar-line"></i> Add Date Here</p>
+            <p class="cert-skills">Advanced SQL · Query Optimization · Window Functions · Data Manipulation</p>
+          </div>
+          <div class="cert-footer">
+            <!-- ✏️ Replace # with your certificate link -->
+            <a href="Certificates/sql_advanced certificate.pdf" class="btn-cert" target="_blank" rel="noopener">
+              <i class="ri-external-link-line"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 4: Python (Editable) -->
+        <div class="cert-card glass-card" data-reveal>
+          <div class="cert-icon-wrap">
+            <div class="cert-icon"><i class="ri-code-box-line"></i></div>
+          </div>
+          <div class="cert-body">
+            <!-- ✏️ Update certificate name and provider -->
+            <h3 class="cert-name">Python Professional Certificate</h3>
+            <p class="cert-provider"><i class="ri-building-2-line"></i> Add Provider Here</p>
+            <p class="cert-duration"><i class="ri-calendar-line"></i> Add Date Here</p>
+            <p class="cert-skills">Python · OOP · Data Structures · Pandas · NumPy · Automation</p>
+          </div>
+          <div class="cert-footer">
+            <!-- ✏️ Replace # with your certificate link -->
+            <a href="#" class="btn-cert" target="_blank" rel="noopener">
+              <i class="ri-external-link-line"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== RESUME SECTION ====================== -->
+  <section id="resume" class="section resume-section">
+    <div class="container">
+      <div class="resume-cta-box glass-card" data-reveal>
+        <div class="resume-cta-left">
+          <div class="resume-icon"><i class="ri-file-user-line"></i></div>
+          <div>
+            <h2 class="resume-cta-title">Get My Resume</h2>
+            <p class="resume-cta-desc">Download my latest resume for skills, certifications, projects, and contact details.</p>
+          </div>
+        </div>
+        <!-- ✏️ Replace resume.pdf with your actual file name -->
+        <a href="resume.pdf" class="btn-primary resume-btn" download>
+          <i class="ri-download-2-line"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== CONTACT SECTION ====================== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-tag" data-reveal><i class="ri-mail-open-line"></i> Get In Touch</div>
+      <h2 class="section-title" data-reveal>Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-subtitle" data-reveal>Open to internship opportunities, collaborations, and data engineering discussions.</p>
+
+      <div class="contact-grid">
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info" data-reveal>
+          <!-- ✏️ Update email and phone below -->
+          <a href="mailto:samyakkamble3016@gmail.com" class="contact-card glass-card">
+            <div class="contact-icon"><i class="ri-mail-line"></i></div>
+            <div>
+              <p class="contact-type">Email</p>
+              <p class="contact-value">samyakkamble3016@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+917875802373" class="contact-card glass-card">
+            <div class="contact-icon"><i class="ri-phone-line"></i></div>
+            <div>
+              <p class="contact-type">Phone</p>
+              <p class="contact-value">+91 78758 02373</p>
+            </div>
+          </a>
+          <div class="contact-card glass-card">
+            <div class="contact-icon"><i class="ri-map-pin-2-line"></i></div>
+            <div>
+              <p class="contact-type">Location</p>
+              <p class="contact-value">Mumbai, Maharashtra, India</p>
+            </div>
+          </div>
+          <!-- Social Links -->
+          <div class="social-links">
+            <!-- ✏️ Update LinkedIn and GitHub URLs -->
+            <a href="https://www.linkedin.com/in/samyak-kamble-972b10315/" target="_blank" rel="noopener" class="social-btn">
+              <i class="ri-linkedin-fill"></i> LinkedIn
+            </a>
+            <a href="https://github.com/samyakGIT-cloud" target="_blank" rel="noopener" class="social-btn">
+              <i class="ri-github-fill"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form (Frontend-only) -->
+        <div class="contact-form-wrap glass-card" data-reveal-right>
+          <h3 class="form-title">Send a Message</h3>
+          <p class="form-note">This form is for display. Connect via email or LinkedIn directly.</p>
+          <div class="contact-form">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Doe" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" placeholder="john@company.com" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Internship / Collaboration / Other" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell me about the opportunity..." class="form-textarea" rows="4"></textarea>
+            </div>
+            <button class="btn-primary form-submit">
+              <i class="ri-send-plane-2-line"></i> Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>SK<span class="logo-bracket">/&gt;</span>
+      </div>
+      <!-- ✏️ Update footer tagline -->
+      <p class="footer-tagline">Built with passion for <span class="gradient-text">Data Engineering, Cloud, and AI-powered Analytics</span></p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/samyak-kamble-972b10315/" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://github.com/samyakGIT-cloud" target="_blank" rel="noopener"><i class="ri-github-fill"></i></a>
+        <a href="mailto:samyakkamble3016@gmail.com"><i class="ri-mail-fill"></i></a>
+      </div>
+      <p class="footer-copy">© 2026 Samyak Kamble. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
